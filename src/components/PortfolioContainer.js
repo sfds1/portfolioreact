@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import NavTabs from "./NavTabs";
 import Home from "./pages/Home";
-import About from "./pages/About";
-import Blog from "./pages/Blog";
+// import About from "./pages/About";
+import Portfolio from "./pages/Portfolio";
 import Contact from "./pages/Contact";
 
 class PortfolioContainer extends Component {
@@ -19,10 +19,10 @@ class PortfolioContainer extends Component {
     switch (this.state.currentPage){
 case 'Home' :
   return <Home/>;
-  case 'About' :
-    return <About/>;
-    case 'Blog' :
-  return <Blog/>;
+  // case 'About' :
+  //   return <About/>;
+    case 'Portfolio' :
+  return <Portfolio/>;
   case 'Contact' :
   return <Contact/>;
   default:
@@ -38,8 +38,7 @@ case 'Home' :
           currentPage={this.state.currentPage}
           handlePageChange={this.handlePageChange}
         />
-        Based on `this.state.currentPage`, render the appropriate component
-        here.
+ 
  {this.renderPage()}
       </div>
     );

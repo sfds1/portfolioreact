@@ -1,22 +1,84 @@
-import React from "react";
+import React, {Component} from "react";
 
-function Contact() {
-  return (
-    <div>
-      <h1>Contact Page</h1>
-      <p>
-        Integer cursus bibendum sem non pretium. Vestibulum in aliquet sem, quis molestie urna.
-        Aliquam semper ultrices varius. Aliquam faucibus sit amet magna a ultrices. Aenean
-        pellentesque placerat lacus imperdiet efficitur. In felis nisl, luctus non ante euismod,
-        tincidunt bibendum mi. In a molestie nisl, eu sodales diam. Nam tincidunt lacus quis magna
-        posuere, eget tristique dui dapibus. Maecenas fermentum elementum faucibus. Quisque nec
-        metus vestibulum, egestas massa eu, sollicitudin ipsum. Nulla facilisi. Sed ut erat ligula.
-        Nam tincidunt nunc in nibh dictum ullamcorper. Class aptent taciti sociosqu ad litora
-        torquent per conubia nostra, per inceptos himenaeos. Etiam ornare rutrum felis at rhoncus.
-        Etiam vel condimentum magna, quis tempor nulla.
-      </p>
-    </div>
-  );
+
+
+class Contact extends Component {
+  // Setting the component's initial state
+  state = {
+    firstName: "",
+    lastName: "",
+    email: ""
+  };
+
+  handleInputChange = event => {
+    // Getting the value and name of the input which triggered the change
+    const value = event.target.value;
+    const name = event.target.name;
+
+    // Updating the input's state
+    this.setState({
+      [name]: value
+    });
+  };
+
+  handleFormSubmit = event => {
+    // Preventing the default behavior of the form submit (which is to refresh the page)
+    event.preventDefault();
+
+    // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
+    if (this.state.firstName === "" || this.state.lastName === "") {
+      alert("Please enter in a first and last name");
+      // want this so the function stops otherwise will get the other alerts
+      return;
+    }
+
+  
+    alert(`Hello ${this.state.firstName} ${this.state.lastName}`);
+    this.setState({
+      firstName: "",
+      lastName: "",
+      email: ""
+    });
+ 
+
+  }
+
+  render() {
+    // Notice how each input has a `value`, `name`, and `onChange` prop
+    return (
+      <div className="container">
+        <p>
+          Hello {this.state.firstName} {this.state.lastName}
+        </p>
+        <form className="form">
+          <input
+            value={this.state.firstName}
+            name="firstName"
+            onChange={this.handleInputChange}
+            type="text"
+            placeholder="First Name"
+          />
+          <input
+            value={this.state.lastName}
+            name="lastName"
+            onChange={this.handleInputChange}
+            type="text"
+            placeholder="Last Name"
+          />
+            <input
+            value={this.state.email}
+            name="email"
+            onChange={this.handleInputChange}
+            type="text"
+            placeholder="Email"
+            maxLength = "35"
+          />
+          <button onClick={this.handleFormSubmit}>Submit</button>
+        </form>
+      </div>
+    );
+  }
 }
+
 
 export default Contact;
