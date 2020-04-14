@@ -1,10 +1,15 @@
 import React from "react";
-
+import picture from "../images/bone.png";
+import "../../App.css"
 
 function Portfolio() {
   return (
     <div className="container">
-      <h1>Portfolio Page</h1>
+         <h1>Portfolio Page</h1>
+<div className ="row"> 
+
+<img className="aboutpic" src={picture} alt=""></img>
+   
       <p>
         Donec a volutpat quam. Curabitur nec varius justo, sed rutrum ligula. Curabitur pellentesque
         turpis sit amet eros iaculis, a mollis arcu dictum. Ut vel ante eget massa ornare placerat.
@@ -17,6 +22,7 @@ function Portfolio() {
         vehicula sit amet at augue. Maecenas aliquam bibendum congue. Pellentesque semper, lectus
         non ullamcorper iaculis, est ligula suscipit velit, sed bibendum turpis dui in sapien.
       </p>
+      </div>
     </div>
   );
 }

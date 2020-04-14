@@ -1,11 +1,14 @@
 import React from "react";
 
+import picture from "../images/luna.jpg";
+import "../../App.css"
+
 function Home() {
   return (
     <div className="container">
       <h1>Home Page</h1>
     
-   
+   <img className="aboutpic" src={picture} alt=""></img>
       <p>
                      My name is Luna and I am a German Sheperd mix.  I was born in the Bakersfield/Fresno area but then my sister and I were
                      brought up to the Bay Area and stayed at the Family Dog Rescue Shelter.  We were there a couple of weeks before we 
