@@ -5,6 +5,9 @@
     margin: 0px 20px 20px 20px;
 }
 
+.contact-form {
+    margin-top: 5rem;
+}
 
 .page-footer {
     bottom: 0;
@@ -37,3 +40,4 @@
 .copyright {
     text-align: center;
 }
+

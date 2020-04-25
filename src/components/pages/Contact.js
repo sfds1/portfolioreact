@@ -1,84 +1,40 @@
-import React, {Component} from "react";
+import React from "react";
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 
 
-class Contact extends Component {
-  // Setting the component's initial state
-  state = {
-    firstName: "",
-    lastName: "",
-    email: ""
-  };
+function Contact() {
+  return (
+    <div className="container">
+      <h1>Contact Page</h1>
+      <Form>
 
-  handleInputChange = event => {
-    // Getting the value and name of the input which triggered the change
-    const value = event.target.value;
-    const name = event.target.name;
+      <Form.Group>
+    <Form.Label>Full Name</Form.Label>
+    <Form.Control type="text" />
+  </Form.Group>
 
-    // Updating the input's state
-    this.setState({
-      [name]: value
-    });
-  };
+  <Form.Group controlId="formBasicEmail">
+    <Form.Label>Email address</Form.Label>
+    <Form.Control type="email" placeholder="Enter email" />
+    <Form.Text className="text-muted">
+      We'll never share your email with anyone else.
+    </Form.Text>
+  </Form.Group>
 
-  handleFormSubmit = event => {
-    // Preventing the default behavior of the form submit (which is to refresh the page)
-    event.preventDefault();
+  <Form.Group controlId="exampleForm.ControlTextarea1">
+    <Form.Label>Message area</Form.Label>
+    <Form.Control as="textarea" rows="3" />
+  </Form.Group>
+  <Button variant="primary" type="submit">
+    Submit
+  </Button>
+</Form>
 
-    // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
-    if (this.state.firstName === "" || this.state.lastName === "") {
-      alert("Please enter in a first and last name");
-      // want this so the function stops otherwise will get the other alerts
-      return;
-    }
-
-  
-    alert(`Hello ${this.state.firstName} ${this.state.lastName}`);
-    this.setState({
-      firstName: "",
-      lastName: "",
-      email: ""
-    });
- 
-
-  }
-
-  render() {
-    // Notice how each input has a `value`, `name`, and `onChange` prop
-    return (
-      <div className="container">
-        <p>
-          Hello {this.state.firstName} {this.state.lastName}
-        </p>
-        <form className="form">
-          <input
-            value={this.state.firstName}
-            name="firstName"
-            onChange={this.handleInputChange}
-            type="text"
-            placeholder="First Name"
-          />
-          <input
-            value={this.state.lastName}
-            name="lastName"
-            onChange={this.handleInputChange}
-            type="text"
-            placeholder="Last Name"
-          />
-            <input
-            value={this.state.email}
-            name="email"
-            onChange={this.handleInputChange}
-            type="text"
-            placeholder="Email"
-            maxLength = "35"
-          />
-          <button onClick={this.handleFormSubmit}>Submit</button>
-        </form>
-      </div>
-    );
-  }
+    </div>
+  );
 }
 
-
 export default Contact;
+

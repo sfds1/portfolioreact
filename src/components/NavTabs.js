@@ -11,17 +11,9 @@ function NavTabs() {
   return (
     <ul className="nav nav-tabs">
       <li className="nav-item">
-        <Link to="/" className={location.pathname === "/" ? "nav-link active" : "nav-link"}>
+        <Link to="/" className={location.pathname === "/home" ? "nav-link active" : "nav-link"}>
           Home
         </Link>
-      </li>
-      <li className="nav-item">
-        {/* <Link
-          to="/about"
-          className={location.pathname === "/about" ? "nav-link active" : "nav-link"}
-        >
-          About
-        </Link> */}
       </li>
       <li className="nav-item">
         <Link
@@ -39,14 +31,7 @@ function NavTabs() {
           Contact
         </Link>
       </li>
-      <li className="nav-item">
-        {/* <Link
-          to="/contact/learn"
-          className={location.pathname === "/contact/learn" ? "nav-link active" : "nav-link"}
-        >
-          Learn
-        </Link> */}
-      </li>
+
     </ul>
   );
 }
