@@ -1,13 +1,13 @@
 ## Name and live url
 Stephanie Kuo React Portfolio
 
-https://stark-plains-67508.herokuapp.com/
+
 
 ## Description
 This is a website built with React
 
 ## What does the app do?
-
+This website shows a basic home, portfolio and contact pages
 
 ## How does it work?
 This is just a website to practice React programming.
